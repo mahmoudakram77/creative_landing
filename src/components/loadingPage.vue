@@ -1,5 +1,5 @@
 <template>
-  <div class="loading" v-if="show">
+  <div class="loading" v-if="false">
     <img src="@/assets/one.gif" alt="" />
   </div>
 </template>

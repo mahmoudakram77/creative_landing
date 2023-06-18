@@ -101,7 +101,7 @@ export default {};
   .bg {
     position: absolute;
     bottom: -2400px;
-    width: 130%;
+    width: 100%;
     height: 500px;
   }
 }

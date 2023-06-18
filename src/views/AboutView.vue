@@ -21,7 +21,7 @@
     </div>
 
     <div class="shop text-center mx-auto d-flex">
-      <div class="one" :class="{ bg: background }">
+      <div class="one">
         <h1>WE ARE</h1>
         <div class="bg">
           <transition name="fade" appear>

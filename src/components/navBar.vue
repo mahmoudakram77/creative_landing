@@ -1,7 +1,5 @@
 <template>
-  <header
-    :class="{ 'nav-hidden': navbarHidden, 'navbar-scrolled': navbarScrolled }"
-  >
+  <header>
     <nav>
       <div class="box">
         <div class="logo">LOGO</div>
@@ -58,7 +56,6 @@ export default {
       windowWidth: null,
       navbarHidden: false,
       lastScrollPosition: 0,
-      navbarScrolled: false,
     };
   },
   methods: {
@@ -76,32 +73,12 @@ export default {
       this.mobileNav = false;
     },
     // navbar fixed
-    scrollHandler() {
-      const currentScrollPosition = window.scrollY;
-      if (currentScrollPosition > 100) {
-        this.navbarHidden = true;
-      } else {
-        this.navbarHidden = false;
-      }
-      if (currentScrollPosition > this.lastScrollPosition) {
-        this.navbarScrolled = true;
-      } else {
-        this.navbarScrolled = false;
-      }
-      this.lastScrollPosition = currentScrollPosition;
-    },
   },
   created() {
     window.addEventListener("resize", this.checkMobile);
     this.checkMobile();
   },
   // navbar fixed
-  mounted() {
-    window.addEventListener("scroll", this.scrollHandler);
-  },
-  beforeUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
 };
 </script>
 
@@ -224,6 +201,11 @@ header {
   }
 }
 @media screen and (max-width: 500px) {
+  .logo {
+    position: relative;
+    left: -10px;
+    top: -2px;
+  }
   .mobile-nav {
     flex-direction: column;
     /* background: blue; */
@@ -367,14 +349,6 @@ header {
 .link-leave-active {
   transition: 0.3s ease-in;
 }
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  transition: top 0.3s;
-}
 
 /* Hide the navbar by translating it above the viewport */
 .navbar-hidden {
@@ -382,5 +356,13 @@ header {
 }
 .navbar-scrolled {
   background-color: white;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: 0.3s;
 }
 </style>
