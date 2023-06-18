@@ -1,5 +1,5 @@
 <template>
-  <div class="loading" v-if="false">
+  <div class="loading" v-if="show">
     <img src="@/assets/one.gif" alt="" />
   </div>
 </template>
@@ -39,5 +39,6 @@ export default {
   height: 500%;
   background: black;
   justify-content: center;
+  overflow-x: hidden;
 }
 </style>

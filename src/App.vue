@@ -4,15 +4,21 @@
   <router-view />
 
   <footer-footer class="footer"></footer-footer>
+  <scroll-up></scroll-up>
+  <loading-page></loading-page>
 </template>
 
 <script>
 import navBar from "./components/navBar.vue";
 import footerFooter from "./components/footerFooter.vue";
+import ScrollUp from "./components/scrollUp.vue";
+import LoadingPage from "./components/loadingPage.vue";
 export default {
   components: {
     navBar,
     footerFooter,
+    ScrollUp,
+    LoadingPage,
   },
 };
 </script>
